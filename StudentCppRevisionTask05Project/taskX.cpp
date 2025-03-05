@@ -39,5 +39,21 @@
 */
 
 int taskX(int h, int a, int b) {
-	return 0;
+
+    if (h <= b || a <= b || h <= 0 || a <= 0 || b < 0) {
+        return 0;
+    }
+
+
+    if (h <= a) {
+        return 1;
+    }
+
+
+    int days = 1;
+    h -= a; 
+
+    days += (h + (a - b) - 1) / (a - b);
+
+    return days;
 }
